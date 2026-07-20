@@ -211,7 +211,7 @@ const GUM_ITEMS: Item[] = [
   { label: "Gum Treatment", desc: "Deep cleaning and therapy to treat gum disease and restore healthy gum tissue.",            image: "/gum traetment/gum-treatment.png" },
   { label: "Flap Surgery",  desc: "Surgical access to clean deep pockets of infection and reattach gum tissue.",              image: "/gum traetment/flap-surgery.png" },
   { label: "Frenectomy",    desc: "Removal of restrictive tissue connecting the lip or tongue to improve function.",          image: "/gum traetment/frenectomy-procedure.png" },
-  { label: "Oral Surgery",  desc: "Minor surgical procedures performed in-clinic with precision and patient comfort in mind.", image: null },
+  { label: "Oral Surgery",  desc: "Minor surgical procedures performed in-clinic with precision and patient comfort in mind.", image: "/gum traetment/oral-surgery.png" },
 ];
 
 /* ══════════════════════════════════════════════
