@@ -5,9 +5,25 @@ import Image from "next/image";
 
 const GOLD = "#C9A227";
 
-const LINKS = {
-  Treatments: ["Dental Implants", "Smile Makeover", "Teeth Whitening", "Root Canal", "Aligners", "Gum Treatment"],
-  "Quick Links": ["About Us", "Our Doctor", "Services", "Before & After", "Testimonials", "Contact Us"],
+const LINKS: Record<string, { label: string; href: string }[]> = {
+  Treatments: [
+    { label: "Dental Implants", href: "/dental-implants" },
+    { label: "Smile Makeover", href: "/smile-makeover" },
+    { label: "Teeth Whitening", href: "/teeth-whitening" },
+    { label: "Root Canal Treatment", href: "/root-canal-treatment" },
+    { label: "Invisible Aligners", href: "/invisible-aligners" },
+    { label: "Gum Treatment", href: "/gum-treatment" },
+    { label: "Dental Crowns", href: "/dental-crowns" },
+    { label: "Dental Veneers", href: "/dental-veneers" },
+  ],
+  "Quick Links": [
+    { label: "About Us", href: "/about" },
+    { label: "Meet the Doctor", href: "/meet-the-doctor" },
+    { label: "Before & After", href: "/before-after" },
+    { label: "Testimonials", href: "/testimonials" },
+    { label: "FAQs", href: "/faqs" },
+    { label: "Contact Us", href: "/contact" },
+  ],
 };
 
 export default function Footer() {
@@ -28,7 +44,7 @@ export default function Footer() {
           {/* Brand col */}
           <div className="lg:col-span-1">
             <div className="mb-5">
-              <Image src="/mins-dentisrty-logo.png" alt="MINS Dentistry" width={160} height={60} className="object-contain" />
+              <Image src="/mins-dentisrty-logo.png" alt="MINS Dentistry" width={160} height={60} style={{ width: "160px", height: "auto" }} />
             </div>
             <p className="text-[13px] leading-relaxed text-white/65 mb-6 max-w-xs">
               Advanced dental care with a gentle touch. Trusted by thousands of patients across Shimoga for over a decade.
@@ -66,13 +82,13 @@ export default function Footer() {
               <p className="text-[10px] font-semibold uppercase tracking-[0.35em] mb-5" style={{ color: GOLD, fontFamily: "monospace" }}>{heading}</p>
               <ul className="flex flex-col gap-3">
                 {items.map((item) => (
-                  <li key={item}>
+                  <li key={item.href}>
                     <a
-                      href="#"
+                      href={item.href}
                       className="text-[13px] text-white/65 transition-colors duration-200 hover:text-white/90 flex items-center gap-2 group"
                     >
                       <span className="w-3 h-px transition-all duration-300 group-hover:w-5" style={{ background: GOLD, opacity: 0.5 }} />
-                      {item}
+                      {item.label}
                     </a>
                   </li>
                 ))}
