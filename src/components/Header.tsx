@@ -4,65 +4,81 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-const CLINIC_PHONE = "+61 400 000 000";
-const CLINIC_TEL = "+61400000000";
+const CLINIC_PHONE = "90081 13963";
+const CLINIC_TEL = "9008113963";
 
 const minsLinks = [
   { label: "About", href: "/about" },
-  { label: "Doctor", href: "/doctor" },
-  { label: "Tips", href: "/tips" },
-  { label: "Research", href: "/research" },
+  { label: "Meet the Doctor", href: "/meet-the-doctor" },
+  { label: "Before & After", href: "/before-after" },
+  { label: "Testimonials", href: "/testimonials" },
+  { label: "FAQs", href: "/faqs" },
   { label: "Contact", href: "/contact" },
 ];
 
 const serviceCategories = [
   {
     title: "Dental Implants",
+    href: "/dental-implants",
     items: [
-      "Single Tooth Implant",
-      "Multiple Tooth Implants",
-      "Full Mouth Rehabilitation",
-      "Bone Grafting",
-      "Implant Consultation",
+      { label: "Single Tooth Implant", href: "/single-tooth-implant" },
+      { label: "Multiple Tooth Implants", href: "/multiple-tooth-implants" },
+      { label: "Full Mouth Rehabilitation", href: "/full-mouth-rehabilitation" },
+      { label: "Bone Grafting", href: "/bone-grafting" },
+      { label: "Implant Consultation", href: "/implant-consultation" },
     ],
   },
   {
     title: "General & Restorative",
+    href: "/general-restorative-dentistry",
     items: [
-      "Dental Consultation",
-      "Root Canal Treatment",
-      "Tooth Filling",
-      "Dental Crowns",
-      "Dental Bridges",
-      "Dentures",
-      "Tooth Extraction",
-      "Emergency Dental Care",
+      { label: "Dental Consultation", href: "/dental-consultation" },
+      { label: "Root Canal Treatment", href: "/root-canal-treatment" },
+      { label: "Tooth Filling", href: "/tooth-filling" },
+      { label: "Dental Crowns", href: "/dental-crowns" },
+      { label: "Dental Bridges", href: "/dental-bridges" },
+      { label: "Dentures", href: "/dentures" },
+      { label: "Tooth Extraction", href: "/tooth-extraction" },
+      { label: "Emergency Dental Care", href: "/emergency-dental-care" },
     ],
   },
   {
-    title: "Cosmetic & Smile",
+    title: "Cosmetic Dentistry",
+    href: "/cosmetic-dentistry",
     items: [
-      "Teeth Whitening",
-      "Smile Makeover",
-      "Dental Veneers",
-      "Invisible Aligners",
-      "Metal Braces",
-      "Ceramic Braces",
+      { label: "Teeth Whitening", href: "/teeth-whitening" },
+      { label: "Smile Makeover", href: "/smile-makeover" },
+      { label: "Dental Veneers", href: "/dental-veneers" },
+    ],
+  },
+  {
+    title: "Orthodontics",
+    href: "/orthodontics",
+    items: [
+      { label: "Invisible Aligners", href: "/invisible-aligners" },
+      { label: "Metal Braces", href: "/metal-braces" },
+      { label: "Ceramic Braces", href: "/ceramic-braces" },
     ],
   },
   {
     title: "Gum Care",
+    href: "/gum-care",
     items: [
-      "Gum Treatment",
-      "Flap Surgery",
-      "Frenectomy",
-      "Oral Surgery",
+      { label: "Gum Treatment", href: "/gum-treatment" },
+      { label: "Flap Surgery", href: "/flap-surgery" },
+      { label: "Frenectomy", href: "/frenectomy" },
+      { label: "Gingival Depigmentation", href: "/gingival-depigmentation" },
+      { label: "Lip Repositioning", href: "/lip-repositioning" },
+      { label: "Ridge Augmentation", href: "/ridge-augmentation" },
+      { label: "Vestibuloplasty", href: "/vestibuloplasty" },
+      { label: "Mucogingival Surgeries", href: "/mucogingival-surgeries" },
+      { label: "Gingival Recession Therapy", href: "/gingival-recession-therapy" },
+      { label: "Recession Therapy", href: "/recession-therapy" },
     ],
   },
 ];
 
-const slugify = (s: string) =>
-  s.toLowerCase().replace(/[()&]/g, "").replace(/\s+/g, "-").replace(/-+/g, "-").trim();
+
 
 const ChevronIcon = ({ open }: { open: boolean }) => (
   <svg
@@ -162,7 +178,25 @@ export default function Header() {
   const baseText = scrolled ? "text-gray-800" : "text-white";
 
   return (
-    <header
+    <>
+      <style>{`
+        .shimmer-header-btn::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -60%;
+          width: 40%;
+          height: 100%;
+          background: linear-gradient(120deg, transparent, rgba(255,255,255,0.55), transparent);
+          transform: skewX(-20deg);
+          animation: shimmer-h 4.5s ease-in-out infinite;
+        }
+        @keyframes shimmer-h {
+          0%, 88% { left: -60%; }
+          100% { left: 130%; }
+        }
+      `}</style>
+      <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? "bg-white/95 backdrop-blur-sm shadow-md" : "bg-transparent"
       }`}
@@ -182,24 +216,42 @@ export default function Header() {
         </Link>
 
         {/* Desktop nav — hover dropdowns */}
-        <nav className="hidden lg:flex flex-1 items-center justify-center gap-6 xl:gap-8">
+        <nav className="hidden lg:flex flex-1 min-w-0 items-center justify-center gap-5 xl:gap-6 mx-8 xl:mx-10">
 
-          {serviceCategories.map((cat) => (
-            <DesktopDropdown key={cat.title} label={cat.title} baseText={baseText}>
-              <ul className="w-64 flex flex-col gap-1 rounded-2xl border border-gray-100 bg-white p-3 shadow-xl">
-                {cat.items.map((item) => (
-                  <li key={item}>
+          {serviceCategories.map((cat) =>
+            cat.items.length === 0 ? (
+              <Link
+                key={cat.title}
+                href={cat.href}
+                className={`flex items-center gap-1 whitespace-nowrap ${navItemClass} ${baseText} ${goldenHover}`}
+              >
+                {cat.title}
+              </Link>
+            ) : (
+              <DesktopDropdown key={cat.title} label={cat.title} baseText={baseText}>
+                <ul className="w-64 flex flex-col gap-1 rounded-2xl border border-gray-100 bg-white p-3 shadow-xl">
+                  <li>
                     <Link
-                      href={`/services/${slugify(item)}`}
-                      className={`block rounded-lg px-4 py-2.5 text-[15px] font-semibold text-gray-700 ${goldenHover}`}
+                      href={cat.href}
+                      className={`block rounded-lg px-4 py-2.5 text-[15px] font-bold text-[#B8912A] border-b border-gray-100 mb-1`}
                     >
-                      {item}
+                      All {cat.title} →
                     </Link>
                   </li>
-                ))}
-              </ul>
-            </DesktopDropdown>
-          ))}
+                  {cat.items.map((item) => (
+                    <li key={item.href}>
+                      <Link
+                        href={item.href}
+                        className={`block rounded-lg px-4 py-2.5 text-[15px] font-semibold text-gray-700 ${goldenHover}`}
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </DesktopDropdown>
+            )
+          )}
 
           {/* Mins dropdown — end of nav, aligns right */}
           <DesktopDropdown label="Mins" align="right" baseText={baseText}>
@@ -229,16 +281,9 @@ export default function Header() {
           </a>
           <Link
             href="/contact"
-            className="relative rounded-2xl px-5 py-2.5 text-[15px] font-bold text-white whitespace-nowrap overflow-hidden
-              bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500
-              shadow-[0_2px_12px_rgba(234,179,8,0.45)]
-              hover:shadow-[0_4px_20px_rgba(234,179,8,0.65)]
-              hover:from-yellow-300 hover:via-amber-300 hover:to-yellow-400
-              transition-all duration-300
-              before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent
-              before:-translate-x-full hover:before:translate-x-full before:transition-transform before:duration-700"
+            className="shimmer-header-btn relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#C9A227] via-[#EBD08C] to-[#C9A227] px-5 py-2.5 text-[15px] font-bold text-black whitespace-nowrap shadow-[0_0_0_rgba(212,175,55,0)] transition-shadow duration-300 hover:shadow-[0_0_28px_rgba(212,175,55,0.45)]"
           >
-            Book Appointment
+            <span className="relative z-10">Book Appointment</span>
           </Link>
         </div>
 
@@ -265,7 +310,16 @@ export default function Header() {
 
           {serviceCategories.map((cat) => {
             const open = openMobileCategory === cat.title;
-            return (
+            return cat.items.length === 0 ? (
+              <Link
+                key={cat.title}
+                href={cat.href}
+                onClick={() => setMenuOpen(false)}
+                className="block rounded-xl px-3 py-3 text-[15px] font-semibold text-gray-800 hover:bg-amber-50 hover:text-amber-500 transition-colors"
+              >
+                {cat.title}
+              </Link>
+            ) : (
               <div key={cat.title}>
                 <button
                   onClick={() => setOpenMobileCategory(open ? null : cat.title)}
@@ -277,14 +331,23 @@ export default function Header() {
                 </button>
                 <div className={`overflow-hidden transition-all duration-300 ${open ? "max-h-[600px]" : "max-h-0"}`}>
                   <ul className="flex flex-col gap-1 pl-3 pb-2">
+                    <li>
+                      <Link
+                        href={cat.href}
+                        onClick={() => setMenuOpen(false)}
+                        className="block rounded-lg px-4 py-2.5 text-[15px] font-bold text-[#B8912A] transition-colors"
+                      >
+                        All {cat.title} →
+                      </Link>
+                    </li>
                     {cat.items.map((item) => (
-                      <li key={item}>
+                      <li key={item.href}>
                         <Link
-                          href={`/services/${slugify(item)}`}
+                          href={item.href}
                           onClick={() => setMenuOpen(false)}
                           className="block rounded-lg px-4 py-2.5 text-[15px] font-semibold text-gray-600 hover:bg-amber-50 hover:text-amber-500 transition-colors"
                         >
-                          {item}
+                          {item.label}
                         </Link>
                       </li>
                     ))}
@@ -332,16 +395,13 @@ export default function Header() {
           <Link
             href="/contact"
             onClick={() => setMenuOpen(false)}
-            className="mt-2 rounded-2xl px-5 py-3 text-[15px] font-bold text-white text-center
-              bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500
-              shadow-[0_2px_12px_rgba(234,179,8,0.4)]
-              hover:from-yellow-300 hover:via-amber-300 hover:to-yellow-400
-              transition-all duration-300"
+            className="shimmer-header-btn relative mt-2 block overflow-hidden rounded-2xl bg-gradient-to-r from-[#C9A227] via-[#EBD08C] to-[#C9A227] px-5 py-3 text-[15px] font-bold text-black text-center shadow-[0_0_0_rgba(212,175,55,0)] transition-shadow duration-300 hover:shadow-[0_0_28px_rgba(212,175,55,0.45)]"
           >
-            Book Appointment
+            <span className="relative z-10">Book Appointment</span>
           </Link>
         </nav>
       </div>
     </header>
+    </>
   );
 }

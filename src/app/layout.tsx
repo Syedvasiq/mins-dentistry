@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import FloatingWidgets from "@/components/FloatingWidgets";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -55,6 +57,8 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <Header />
         {children}
+        <Footer />
+        <FloatingWidgets />
       </body>
     </html>
   );
