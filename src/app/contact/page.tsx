@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 const contactCards = [
   {
     title: "Call Us",
-    value: "+91 00000 00000",
+    value: "+91 90088 83963",
     description:
       "Speak with our team for appointments, treatment guidance, and general enquiries.",
-    href: "tel:+910000000000",
+    href: "tel:+919008883963",
     action: "Call Now",
   },
   {
@@ -27,10 +27,10 @@ const contactCards = [
   },
   {
     title: "WhatsApp",
-    value: "+91 00000 00000",
+    value: "+91 90088 83963",
     description:
       "Connect with us for quick assistance, consultation coordination, and appointment support.",
-    href: "https://wa.me/910000000000",
+    href: "https://wa.me/919008883963",
     action: "Chat on WhatsApp",
   },
 ];
@@ -39,16 +39,16 @@ const locations = [
   {
     city: "Shimoga Clinic",
     address:
-      "Add your full Shimoga clinic address here, including landmark and pin code.",
+      "4th Cross Rd, near Wisdom School, opp. Mymuna Masjid, Wadi E, Huda, Shivamogga, Karnataka 577203",
     timing: "Mon – Sat | 10:00 AM – 8:00 PM",
-    mapHref: "#",
+    mapHref: "https://maps.google.com/?q=4th+Cross+Rd+near+Wisdom+School+opp+Mymuna+Masjid+Shivamogga+Karnataka+577203",
   },
   {
     city: "Bangalore Clinic",
     address:
-      "Add your full Bangalore clinic address here, including landmark and pin code.",
+      "Vishwakarma Architect #714, opposite to Eid Gah, Avalahalli Road, JP Nagar 9th Phase, Bengaluru",
     timing: "Mon – Sat | 10:00 AM – 8:00 PM",
-    mapHref: "#",
+    mapHref: "https://maps.google.com/?q=Vishwakarma+Architect+714+Avalahalli+Road+JP+Nagar+9th+Phase+Bengaluru",
   },
 ];
 
@@ -140,13 +140,13 @@ export default function ContactPage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
-                href="tel:+910000000000"
+                href="tel:+919008883963"
                 className="inline-flex items-center justify-center rounded-full bg-[#B8912A] px-6 py-3 text-sm font-medium text-white transition duration-300 hover:bg-[#9E7C22]"
               >
                 Call the Clinic
               </Link>
               <Link
-                href="https://wa.me/910000000000"
+                href="https://wa.me/919008883963"
                 className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 px-6 py-3 text-sm font-medium text-white backdrop-blur-sm transition duration-300 hover:bg-white/15"
               >
                 Message on WhatsApp

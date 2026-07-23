@@ -103,22 +103,27 @@ export default function Footer() {
               {[
                 {
                   icon: <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z" />,
-                  text: "+91 90081 13963",
-                  href: "tel:+919008113963",
+                  text: "+91 90088 83963",
+                  href: "tel:+919008883963",
                 },
                 {
                   icon: <><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M2 7l10 7 10-7" /></>,
-                  text: "info@minsdentistry.com",
-                  href: "mailto:info@minsdentistry.com",
+                  text: "care@minsdentistry.com",
+                  href: "mailto:care@minsdentistry.com",
                 },
                 {
                   icon: <><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" /></>,
-                  text: "Shimoga, Karnataka",
-                  href: "#",
+                  text: "Shimoga: 4th Cross Rd, near Wisdom School, opp. Mymuna Masjid, Shivamogga 577203",
+                  href: "https://maps.google.com/?q=4th+Cross+Rd+near+Wisdom+School+opp+Mymuna+Masjid+Shivamogga+Karnataka+577203",
+                },
+                {
+                  icon: <><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" /></>,
+                  text: "Bangalore: #714, Avalahalli Road, JP Nagar 9th Phase, Bengaluru",
+                  href: "https://maps.google.com/?q=Vishwakarma+Architect+714+Avalahalli+Road+JP+Nagar+9th+Phase+Bengaluru",
                 },
                 {
                   icon: <><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></>,
-                  text: "Mon – Sat: 9:00 AM – 8:00 PM",
+                  text: "Mon – Sat: 10:00 AM – 8:00 PM",
                   href: "#",
                 },
               ].map(({ icon, text, href }, i) => (

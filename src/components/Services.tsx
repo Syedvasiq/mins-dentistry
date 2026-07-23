@@ -7,8 +7,28 @@ import Link from "next/link";
 
 const display = Cormorant_Garamond({ subsets: ["latin"], weight: ["500", "600"] });
 
-const slugify = (s: string) =>
-  s.toLowerCase().replace(/[()&]/g, "").replace(/\s+/g, "-").replace(/-+/g, "-").trim();
+const SERVICE_HREFS: Record<string, string> = {
+  "Single Tooth Implant":      "/single-tooth-implant",
+  "Multiple Tooth Implants":   "/multiple-tooth-implants",
+  "Full Mouth Rehabilitation": "/full-mouth-rehabilitation",
+  "Bone Grafting":             "/bone-grafting",
+  "Root Canal Treatment":      "/root-canal-treatment",
+  "Tooth Filling":             "/tooth-filling",
+  "Dental Crowns":             "/dental-crowns",
+  "Dental Bridges":            "/dental-bridges",
+  "Dentures":                  "/dentures",
+  "Tooth Extraction":          "/tooth-extraction",
+  "Teeth Whitening":           "/teeth-whitening",
+  "Smile Makeover":            "/smile-makeover",
+  "Dental Veneers":            "/dental-veneers",
+  "Invisible Aligners":        "/invisible-aligners",
+  "Metal Braces":              "/metal-braces",
+  "Ceramic Braces":            "/ceramic-braces",
+  "Gum Treatment":             "/gum-treatment",
+  "Flap Surgery":              "/flap-surgery",
+  "Frenectomy":                "/frenectomy",
+  "Oral Surgery":              "/oral-surgery",
+};
 
 const ACCENT = "#C9A227";
 const BG     = "#0B0B0A";
@@ -189,11 +209,11 @@ function LightSection({ title, items }: { title: string; items: Item[] }) {
 
             <div className="mt-10" style={fadeIn("0.22s")}>
               <Link
-                href={`/services/${slugify(activeSub)}`}
+                href={SERVICE_HREFS[activeSub] ?? "/general-restorative-dentistry"}
                 className="inline-flex items-center gap-2.5 rounded-2xl border px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-300 hover:bg-[#C9A227]/10"
                 style={{ borderColor: ACCENT, color: ACCENT }}
               >
-                Learn about {activeSub}
+                Learn More
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14" /><path d="M13 6l6 6-6 6" />
@@ -351,11 +371,11 @@ function CosmeticSection() {
 
         <div className="mt-10" style={fadeIn("0.22s")}>
           <Link
-            href={`/services/${slugify(activeSub)}`}
+            href={SERVICE_HREFS[activeSub] ?? "/cosmetic-dentistry"}
             className="inline-flex items-center gap-2.5 rounded-2xl border px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-300 hover:bg-[#C9A227]/10"
             style={{ borderColor: ACCENT, color: ACCENT }}
           >
-            Learn about {activeSub}
+            Learn More
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14" /><path d="M13 6l6 6-6 6" />
@@ -499,11 +519,11 @@ function GumSection() {
 
             <div className="mt-10" style={fadeIn("0.22s")}>
               <Link
-                href={`/services/${slugify(activeSub)}`}
+                href={SERVICE_HREFS[activeSub] ?? "/gum-care"}
                 className="inline-flex items-center gap-2.5 rounded-2xl border px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-300 hover:bg-[#C9A227]/10"
                 style={{ borderColor: ACCENT, color: ACCENT }}
               >
-                Learn about {activeSub}
+                Learn More
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14" /><path d="M13 6l6 6-6 6" />
@@ -701,11 +721,11 @@ export default function Services() {
             </ul>
             <div className="mt-10" style={fadeIn(bodyVisible, "0.22s")}>
               <Link
-                href={`/services/${slugify(activeSub)}`}
+                href={SERVICE_HREFS[activeSub] ?? "/dental-implants"}
                 className="inline-flex items-center gap-2.5 rounded-2xl border px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-300 hover:bg-[#C9A227]/10"
                 style={{ borderColor: ACCENT, color: ACCENT }}
               >
-                Learn about {activeSub}
+                Learn More
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14" /><path d="M13 6l6 6-6 6" />
