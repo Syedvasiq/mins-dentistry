@@ -44,7 +44,7 @@ export default function AboutStory() {
 
             {/* Body text */}
             <p className="text-[15px] font-medium leading-relaxed text-[#5F574D] max-w-xl">
-              MINS Dentistry is a specialist dental practice offering comprehensive oral healthcare under one roof. Founded by Dr. Sabiha Kouser — a qualified Periodontist, Implantologist, and Laser Dentistry Specialist — the clinic brings together advanced dental technology with a warm, patient-first environment.
+              MINS Dentistry is a specialist dental practice offering comprehensive oral healthcare under one roof. Founded by Dr. Sabiha Kouser M S — a qualified Periodontist, Implantologist, and Laser Dentistry Specialist — the clinic brings together advanced dental technology with a warm, patient-first environment.
             </p>
             <p className="text-[15px] font-medium leading-relaxed text-[#5F574D] max-w-xl">
               From routine check-ups to full mouth rehabilitations, every treatment is planned with precision and care. We take the time to understand your needs, walk you through every option, and ensure your experience is comfortable, clear, and completely tailored to you.

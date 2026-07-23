@@ -252,7 +252,7 @@ export default function Doctor() {
               >
                 <Image
                   src="/dr-sabiha.png"
-                  alt="Dr. Sabiha Kouser — Periodontist, Implantologist & Laser Dentistry Specialist"
+                  alt="Dr. Sabiha Kouser M S — Periodontist, Implantologist & Laser Dentistry Specialist"
                   fill
                   className="object-cover object-center"
                   sizes="(max-width: 768px) 96vw, 582px"
@@ -273,7 +273,7 @@ export default function Doctor() {
                   Meet
                 </p>
                 <h3 className={`${display.className} mt-2 text-4xl font-semibold leading-tight text-gray-900 sm:text-5xl`}>
-                  Dr. Sabiha Kouser
+                  Dr. Sabiha Kouser M S
                 </h3>
                 <p className="mt-1 text-base font-medium" style={{ color: ACCENT }}>
                   Periodontist, Implantologist &amp; Laser Dentistry Specialist

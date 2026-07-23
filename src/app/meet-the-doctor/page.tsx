@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Meet the Doctor | MINS Dentistry",
-  description: "Meet Dr. Sabiha Kouser — Periodontist, Implantologist & Laser Dentistry Specialist at MINS Dentistry, Shimoga & Bangalore.",
+  description: "Meet Dr. Sabiha Kouser M S — Periodontist, Implantologist & Laser Dentistry Specialist at MINS Dentistry, Shimoga & Bangalore.",
 };
 
 const credentials = ["BDS", "MDS", "MPerio (RCSEd, UK)", "MICIO (USA)", "FAALD (EAU)"];
@@ -50,7 +50,7 @@ export default function MeetTheDoctorPage() {
           </nav>
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#D6B15A] mb-5" style={{ fontFamily: "monospace" }}>Our Specialist</p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.05] text-white">Meet Dr. Sabiha Kouser</h1>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.05] text-white">Meet Dr. Sabiha Kouser M S</h1>
             <p className="mt-6 text-[15px] sm:text-[16px] leading-relaxed text-white/80 max-w-2xl">Periodontist, Implantologist &amp; Laser Dentistry Specialist with over a decade of clinical experience and international training across the UK, USA, and Europe.</p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-[#B8912A] px-6 py-3 text-sm font-medium text-white transition duration-300 hover:bg-[#9E7C22]">Book a Consultation</Link>
@@ -89,7 +89,7 @@ export default function MeetTheDoctorPage() {
             <div className="relative z-10 overflow-hidden rounded-full" style={{ width: "min(520px, 90vw)", height: "min(520px, 90vw)" }}>
               <Image
                 src="/dr-sabiha.png"
-                alt="Dr. Sabiha Kouser — Periodontist at MINS Dentistry"
+                alt="Dr. Sabiha Kouser M S — Periodontist at MINS Dentistry"
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 90vw, 520px"
@@ -107,19 +107,19 @@ export default function MeetTheDoctorPage() {
           {/* Right — details */}
           <div className="flex flex-col gap-8">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-semibold text-[#1F1A17]">Dr. Sabiha Kouser</h2>
+              <h2 className="text-3xl sm:text-4xl font-semibold text-[#1F1A17]">Dr. Sabiha Kouser M S</h2>
               <p className="mt-2 text-[15px] font-medium text-[#B8912A]">Periodontist, Implantologist &amp; Laser Dentistry Specialist</p>
               <p className="mt-1 text-sm text-[#8A7E72]" style={{ fontFamily: "monospace" }}>10+ Years of Clinical Experience</p>
             </div>
             <div className="h-px w-16 bg-[linear-gradient(to_right,#C9A227,transparent)]" />
             <p className="text-[15px] leading-relaxed text-[#5F574D]">
-              Dr. Sabiha Kouser brings over a decade of clinical expertise to every patient interaction. Trained at some of the world&apos;s most prestigious institutions, she combines international-standard techniques with a deeply personal, compassionate approach to care. Her philosophy is simple — every patient deserves to understand their treatment, feel at ease, and leave with a smile they are proud of.
+              Dr. Sabiha Kouser M S brings over a decade of clinical expertise to every patient interaction. Trained at some of the world&apos;s most prestigious institutions, she combines international-standard techniques with a deeply personal, compassionate approach to care. Her philosophy is simple — every patient deserves to understand their treatment, feel at ease, and leave with a smile they are proud of.
             </p>
             <div className="rounded-[1.5rem] bg-[#1F1A17] border border-white/10 p-6">
               <p className="text-[15px] italic leading-relaxed text-white/80">
                 &ldquo;Every smile tells a story. Our mission is to ensure yours reflects confidence, health, and happiness.&rdquo;
               </p>
-              <p className="mt-4 text-sm font-semibold text-[#D6B15A]">— Dr. Sabiha Kouser</p>
+              <p className="mt-4 text-sm font-semibold text-[#D6B15A]">— Dr. Sabiha Kouser M S</p>
             </div>
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#8A7E72] mb-3" style={{ fontFamily: "monospace" }}>Qualifications</p>
@@ -152,7 +152,7 @@ export default function MeetTheDoctorPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#B8912A] mb-4" style={{ fontFamily: "monospace" }}>Clinical Expertise</p>
             <h2 className="text-3xl sm:text-4xl font-semibold text-[#1F1A17]">Areas of specialist focus</h2>
           </div>
-          <p className="text-[15px] leading-relaxed text-[#5F574D] max-w-xl">Dr. Sabiha&apos;s training spans multiple disciplines, allowing her to manage complex cases from diagnosis through to final restoration.</p>
+          <p className="text-[15px] leading-relaxed text-[#5F574D] max-w-xl">Dr. Sabiha M S&apos;s training spans multiple disciplines, allowing her to manage complex cases from diagnosis through to final restoration.</p>
         </div>
         <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
           {expertise.map((item) => (
@@ -182,7 +182,7 @@ export default function MeetTheDoctorPage() {
           <div className="grid lg:grid-cols-[1fr_auto] gap-8 items-center">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/75 mb-4" style={{ fontFamily: "monospace" }}>Get in Touch</p>
-              <h3 className="text-2xl sm:text-3xl font-semibold mb-3">Ready to meet Dr. Sabiha in person?</h3>
+              <h3 className="text-2xl sm:text-3xl font-semibold mb-3">Ready to meet Dr. Sabiha M S in person?</h3>
               <p className="text-[15px] leading-relaxed text-white/85 max-w-2xl">Book a consultation and experience the MINS Dentistry difference — expert care, a welcoming environment, and a team that genuinely cares about your smile.</p>
             </div>
             <div className="flex flex-wrap gap-4 lg:flex-col lg:items-stretch">

@@ -46,7 +46,7 @@ export default function AboutDoctor() {
             <div className="relative rounded-[24px] overflow-hidden aspect-[3/4]">
               <Image
                 src="/dr-sabiha.png"
-                alt="Dr. Sabiha Kouser"
+                alt="Dr. Sabiha Kouser M S"
                 fill
                 className="object-cover object-top"
                 sizes="420px"
@@ -62,7 +62,7 @@ export default function AboutDoctor() {
               <p className={`${display.className} text-lg italic text-white/80 leading-relaxed`}>
                 "Every smile tells a story. Our mission is to ensure yours reflects confidence, health, and happiness."
               </p>
-              <p className="mt-3 text-sm font-semibold" style={{ color: GOLD }}>— Dr. Sabiha Kouser</p>
+              <p className="mt-3 text-sm font-semibold" style={{ color: GOLD }}>— Dr. Sabiha Kouser M S</p>
             </div>
           </div>
 
@@ -72,7 +72,7 @@ export default function AboutDoctor() {
             style={{ opacity: visible ? 1 : 0, transform: visible ? "translateX(0)" : "translateX(40px)", transition: "opacity 0.9s ease 0.3s, transform 0.9s ease 0.3s" }}
           >
             <div>
-              <h3 className={`${display.className} text-4xl sm:text-5xl font-semibold text-gray-900`}>Dr. Sabiha Kouser</h3>
+              <h3 className={`${display.className} text-4xl sm:text-5xl font-semibold text-gray-900`}>Dr. Sabiha Kouser M S</h3>
               <p className="mt-2 text-base font-medium" style={{ color: GOLD }}>Periodontist, Implantologist &amp; Laser Dentistry Specialist</p>
               <p className="mt-1 text-sm text-gray-400" style={{ fontFamily: "monospace" }}>10+ Years of Clinical Experience</p>
             </div>
@@ -80,7 +80,7 @@ export default function AboutDoctor() {
             <span className="block h-px w-16" style={{ background: `linear-gradient(to right, ${GOLD}, transparent)` }} />
 
             <p className="text-gray-600 text-[16px] leading-relaxed">
-              Dr. Sabiha Kouser brings over a decade of clinical expertise to every patient interaction. Trained at some of the world's most prestigious institutions, she combines international-standard techniques with a deeply personal, compassionate approach to care.
+              Dr. Sabiha Kouser M S brings over a decade of clinical expertise to every patient interaction. Trained at some of the world's most prestigious institutions, she combines international-standard techniques with a deeply personal, compassionate approach to care.
             </p>
 
             {/* Qualifications */}
