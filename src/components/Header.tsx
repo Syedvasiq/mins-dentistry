@@ -195,9 +195,6 @@ export default function Header() {
           0%, 88% { left: -60%; }
           100% { left: 130%; }
         }
-        @media (max-width: 1023px) {
-          .logo-img { height: 92px !important; }
-        }
       `}</style>
       <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -214,7 +211,6 @@ export default function Header() {
             width={280}
             height={100}
             priority
-            className="logo-img"
             style={{ height: "80px", width: "auto" }}
           />
         </Link>
