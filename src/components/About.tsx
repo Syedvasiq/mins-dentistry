@@ -47,7 +47,7 @@ export default function About() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-white py-14 sm:py-20">
+    <section ref={sectionRef} className="bg-white py-16 sm:py-24 lg:py-32">
       <div className="mx-auto w-full max-w-[1600px] px-6 sm:px-10 lg:px-16 xl:px-24">
         <div className="flex flex-col items-stretch gap-12 lg:flex-row lg:gap-20">
 
@@ -60,7 +60,7 @@ export default function About() {
                 className={`about-reveal text-xs font-semibold uppercase tracking-[0.35em] text-[#B8912A] ${visible ? "about-reveal-in" : ""}`}
                 style={{ animationDelay: "0.05s" }}
               >
-                Welcome to MINS Dentistry
+                Welcome to MINS Dentistry Dental Clinic &amp; Implant Center
               </p>
 
               <span
@@ -68,7 +68,7 @@ export default function About() {
               />
 
               <h2
-                className={`${display.className} about-reveal mt-6 text-4xl font-semibold leading-tight text-gray-900 sm:text-5xl md:text-6xl ${visible ? "about-reveal-in" : ""}`}
+                className={`${display.className} about-reveal mt-6 text-5xl font-semibold leading-tight text-gray-900 sm:text-6xl md:text-7xl ${visible ? "about-reveal-in" : ""}`}
                 style={{ animationDelay: "0.2s" }}
               >
                 Expert Dental Care<br />
@@ -123,7 +123,7 @@ export default function About() {
           {/* Right — image */}
           <div
             className={`about-mask relative w-full lg:w-[48%] overflow-hidden rounded-2xl ${visible ? "about-mask-in" : ""}`}
-            style={{ minHeight: "420px" }}
+            style={{ minHeight: "520px" }}
           >
             <Image
               src="/about-us.png"
