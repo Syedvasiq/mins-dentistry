@@ -11,7 +11,7 @@ const credentials = [
   { abbr: "BDS",              full: "Bachelor of Dental Surgery" },
   { abbr: "MDS",              full: "Master of Dental Surgery" },
   { abbr: "MPerio (RCSEd)",   full: "Member in Periodontics, Royal College of Surgeons Edinburgh" },
-  { abbr: "MICIO (USA)",      full: "Member, International Congress of Implantologists" },
+  { abbr: "MICOI (USA)",      full: "Member, International Congress of Implantologists" },
   { abbr: "FAALT (EAU)",      full: "Fellow, European Academy of Aesthetic & Laser Therapy" },
 ];
 
