@@ -9,7 +9,7 @@ const display = Cormorant_Garamond({ subsets: ["latin"], weight: ["400", "500", 
 
 const ACCENT = "#C9A227";
 
-const CREDENTIALS = ["BDS", "MDS", "MPerio (RCSEd, UK)", "MICIO (USA)", "FAALD (EAU)"];
+const CREDENTIALS = ["BDS", "MDS", "MPerio (RCSEd)", "MICIO (USA)", "FAALT (EAU)"];
 const HIGHLIGHTS = [
   "Personalized Treatment",
   "Digital Dentistry",

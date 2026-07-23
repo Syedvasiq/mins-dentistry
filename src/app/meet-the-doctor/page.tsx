@@ -7,7 +7,13 @@ export const metadata: Metadata = {
   description: "Meet Dr. Sabiha Kouser M S — Periodontist, Implantologist & Laser Dentistry Specialist at MINS Dentistry, Shimoga & Bangalore.",
 };
 
-const credentials = ["BDS", "MDS", "MPerio (RCSEd, UK)", "MICIO (USA)", "FAALD (EAU)"];
+const credentials = [
+  { abbr: "BDS",              full: "Bachelor of Dental Surgery" },
+  { abbr: "MDS",              full: "Master of Dental Surgery" },
+  { abbr: "MPerio (RCSEd)",   full: "Member in Periodontics, Royal College of Surgeons Edinburgh" },
+  { abbr: "MICIO (USA)",      full: "Member, International Congress of Implantologists" },
+  { abbr: "FAALT (EAU)",      full: "Fellow, European Academy of Aesthetic & Laser Therapy" },
+];
 
 const expertise = [
   { title: "Periodontics", description: "Specialist-level diagnosis and treatment of gum disease, from non-surgical therapy to advanced surgical procedures." },
@@ -123,9 +129,24 @@ export default function MeetTheDoctorPage() {
             </div>
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#8A7E72] mb-3" style={{ fontFamily: "monospace" }}>Qualifications</p>
-              <div className="flex flex-wrap gap-2">
-                {credentials.map((c) => (
-                  <span key={c} className="rounded-full border border-[#C9A22755] bg-[#C9A2270d] px-4 py-1.5 text-[12px] font-semibold uppercase tracking-wider text-[#B8912A]">{c}</span>
+              <div className="flex flex-col gap-2">
+                {credentials.map((c, i) => (
+                  <div
+                    key={c.abbr}
+                    className="flex items-center gap-4 rounded-xl px-4 py-3"
+                    style={{
+                      background: i % 2 === 0 ? "rgba(201,162,39,0.06)" : "transparent",
+                      border: "1px solid rgba(201,162,39,0.18)",
+                    }}
+                  >
+                    <span
+                      className="shrink-0 rounded-lg px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-[#B8912A]"
+                      style={{ background: "rgba(201,162,39,0.12)", minWidth: "4.5rem", textAlign: "center" }}
+                    >
+                      {c.abbr}
+                    </span>
+                    <span className="text-[13px] text-[#5F574D] leading-snug">{c.full}</span>
+                  </div>
                 ))}
               </div>
             </div>

@@ -8,7 +8,13 @@ import { Cormorant_Garamond } from "next/font/google";
 const display = Cormorant_Garamond({ subsets: ["latin"], weight: ["400", "500", "600"], style: ["normal", "italic"] });
 const GOLD = "#C9A227";
 
-const CREDENTIALS = ["BDS", "MDS", "MPerio (RCSEd, UK)", "MICIO (USA)", "FAALD (EAU)"];
+const CREDENTIALS = [
+  { abbr: "BDS",              full: "Bachelor of Dental Surgery" },
+  { abbr: "MDS",              full: "Master of Dental Surgery" },
+  { abbr: "MPerio (RCSEd)",   full: "Member in Periodontics, Royal College of Surgeons Edinburgh" },
+  { abbr: "MICIO (USA)",      full: "Member, International Congress of Implantologists" },
+  { abbr: "FAALT (EAU)",      full: "Fellow, European Academy of Aesthetic & Laser Therapy" },
+];
 const EXPERTISE = ["Periodontics", "Dental Implants", "Laser Dentistry", "Digital Smile Design", "Full Mouth Rehabilitation", "Cosmetic Dentistry"];
 const MEMBERSHIPS = ["Royal College of Surgeons, Edinburgh", "International Congress of Implantologists", "European Academy of Aesthetic Dentistry"];
 
@@ -85,16 +91,27 @@ export default function AboutDoctor() {
 
             {/* Qualifications */}
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] mb-3 text-gray-400" style={{ fontFamily: "monospace" }}>Qualifications</p>
-              <div className="flex flex-wrap gap-2">
-                {CREDENTIALS.map(c => (
-                  <span
-                    key={c}
-                    className="rounded-full px-4 py-1.5 text-[12px] font-semibold uppercase tracking-wider"
-                    style={{ borderWidth: "1px", borderStyle: "solid", borderColor: `${GOLD}55`, color: GOLD, background: `${GOLD}0d` }}
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] mb-4 text-gray-400" style={{ fontFamily: "monospace" }}>Qualifications</p>
+              <div className="grid grid-cols-1 gap-2">
+                {CREDENTIALS.map((c, i) => (
+                  <div
+                    key={c.abbr}
+                    className="flex items-center gap-4 rounded-xl px-4 py-3"
+                    style={{
+                      background: i % 2 === 0 ? `${GOLD}08` : "transparent",
+                      borderWidth: "1px",
+                      borderStyle: "solid",
+                      borderColor: `${GOLD}22`,
+                    }}
                   >
-                    {c}
-                  </span>
+                    <span
+                      className="shrink-0 rounded-lg px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider"
+                      style={{ background: `${GOLD}18`, color: GOLD, minWidth: "4.5rem", textAlign: "center" }}
+                    >
+                      {c.abbr}
+                    </span>
+                    <span className="text-[13px] text-gray-600 leading-snug">{c.full}</span>
+                  </div>
                 ))}
               </div>
             </div>
